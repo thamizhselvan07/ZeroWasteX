@@ -13,16 +13,14 @@ from routes.metrics_routes import metrics_blueprint
 def create_app():
     load_dotenv()
     app = Flask(__name__)
-    cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173,https://zero-waste-x.vercel.app")
     CORS(
         app,
         resources={r"/*": {
-            "origins": [origin.strip() for origin in cors_origins.split(",") if origin.strip()],
+            "origins": "*",
             "methods": ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization"],
             "expose_headers": ["Content-Type"]
-        }},
-        supports_credentials=True,
+        }}
     )
 
     app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "zerowastex-dev-secret")
