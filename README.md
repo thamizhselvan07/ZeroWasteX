@@ -1,7 +1,24 @@
 <div align="center">
-  <h1>♻️ ZeroWasteX</h1>
+  <h1>♻️ FoodBridge</h1>
   <p>A full-stack food redistribution platform connecting generous donors with pickup volunteers through an interactive live map, request workflows, and gamified engagement.</p>
 </div>
+
+## 🎯 Problem Statement
+**Food waste is a critical global issue.** Millions of tons of surplus food from restaurants, grocery stores, and homes are discarded daily, while many communities face food insecurity. Current solutions lack:
+- **Real-time visibility** of available surplus food
+- **Efficient coordination** between donors and volunteers
+- **Community engagement** to incentivize participation
+- **Transparent impact tracking** of redistribution efforts
+
+## ✅ Solution
+**FoodBridge** is a digital platform that:
+1. **Connects Donors with Volunteers** - Real-time map shows available surplus food items with precise locations
+2. **Streamlines Logistics** - Volunteers can easily request and pickup surplus food through an intuitive workflow
+3. **Gamifies Participation** - Leaderboard system rewards active volunteers, building community engagement
+4. **Tracks Impact** - Comprehensive metrics dashboard shows real-time food redistribution statistics globally
+5. **Enables Accessibility** - User-friendly interface makes participation easy for both donors and volunteers
+
+Result: **More food gets redistributed, less food goes to waste, and communities engage in sustainable food practices.**
 
 ## 🌐 Live Deployments
 - **Frontend (Vercel):** [https://zero-waste-x.vercel.app/](https://zero-waste-x.vercel.app/)
