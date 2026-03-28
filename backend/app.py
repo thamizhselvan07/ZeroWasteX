@@ -13,7 +13,7 @@ from routes.metrics_routes import metrics_blueprint
 def create_app():
     load_dotenv()
     app = Flask(__name__)
-    cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174")
+    cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173,https://zero-waste-x.vercel.app")
     CORS(
         app,
         resources={r"/*": {
