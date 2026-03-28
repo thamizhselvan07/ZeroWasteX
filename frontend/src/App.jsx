@@ -8,6 +8,7 @@ import AddFoodPage from "./pages/AddFoodPage";
 import DashboardPage from "./pages/DashboardPage";
 import DiscoverPage from "./pages/DiscoverPage";
 import LandingPage from "./pages/LandingPage";
+import LeaderboardPage from "./pages/LeaderboardPage";
 import Login from "./pages/Login";
 import MyRequestsPage from "./pages/MyRequestsPage";
 import PickupPage from "./pages/PickupPage";
@@ -19,6 +20,7 @@ const appRoutes = {
   pickup: "/pickup",
   myRequests: "/my-requests",
   dashboard: "/dashboard",
+  leaderboard: "/leaderboard",
   profile: "/profile",
   addFood: "/add-food",
 };
@@ -137,6 +139,8 @@ function App() {
       );
     } else if (activePath === appRoutes.addFood) {
       content = <AddFoodPage navigate={navigate} />;
+    } else if (activePath === appRoutes.leaderboard) {
+      content = <LeaderboardPage />;
     } else {
       content = <DashboardPage navigate={navigate} />;
     }

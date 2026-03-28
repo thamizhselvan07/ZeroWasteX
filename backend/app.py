@@ -7,6 +7,7 @@ from flask_cors import CORS
 from routes.auth_routes import auth_blueprint
 from routes.food_routes import food_blueprint
 from routes.health_routes import health_blueprint
+from routes.metrics_routes import metrics_blueprint
 
 
 def create_app():
@@ -29,6 +30,7 @@ def create_app():
     app.register_blueprint(health_blueprint, url_prefix="/health")
     app.register_blueprint(auth_blueprint)
     app.register_blueprint(food_blueprint)
+    app.register_blueprint(metrics_blueprint)
 
     @app.route("/")
     def index():

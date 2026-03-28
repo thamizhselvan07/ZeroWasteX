@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Compass, HeartHandshake, MapPinned, ShieldCheck } from "lucide-react";
 
+import ImpactStats from "../components/ImpactStats";
+import Leaderboard from "../components/Leaderboard";
+
 function FloatingCard({ className, title, subtitle, duration = 6, delay = 0 }) {
   return (
     <motion.div
@@ -210,6 +213,27 @@ function LandingPage({ onGetStarted, onLogin }) {
             </motion.div>
           </div>
         </div>
+      </div>
+
+      {/* Impact Dashboard Section */}
+      <ImpactStats />
+
+      {/* Leaderboard Section on Landing */}
+      <div className="section-shell relative z-10 pb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">🏆 Top Volunteers</h2>
+            <p className="mt-2 text-white/60">Heroes who rescued food this week</p>
+          </div>
+          <div className="max-w-2xl mx-auto">
+            <Leaderboard compact />
+          </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -45,6 +45,9 @@ export function getCountdownState(expiryTime) {
     return {
       expired: false,
       urgent: false,
+      urgencyLevel: "safe",
+      urgencyColor: "green",
+      urgencyBadge: null,
       hoursLeft: null,
       label: expiryTime,
       millisecondsLeft: null,
@@ -57,6 +60,9 @@ export function getCountdownState(expiryTime) {
     return {
       expired: true,
       urgent: true,
+      urgencyLevel: "expired",
+      urgencyColor: "red",
+      urgencyBadge: "EXPIRED",
       hoursLeft: 0,
       label: "Expired",
       millisecondsLeft: 0,
@@ -65,11 +71,29 @@ export function getCountdownState(expiryTime) {
 
   const hours = Math.floor(diff / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const hoursLeft = diff / (1000 * 60 * 60);
+
+  let urgencyLevel = "safe";
+  let urgencyColor = "green";
+  let urgencyBadge = null;
+
+  if (hoursLeft < 1) {
+    urgencyLevel = "critical";
+    urgencyColor = "red";
+    urgencyBadge = "URGENT";
+  } else if (hoursLeft < 3) {
+    urgencyLevel = "warning";
+    urgencyColor = "yellow";
+    urgencyBadge = "EXPIRING SOON";
+  }
 
   return {
     expired: false,
-    urgent: diff < 2 * 60 * 60 * 1000,
-    hoursLeft: diff / (1000 * 60 * 60),
+    urgent: hoursLeft < 3,
+    urgencyLevel,
+    urgencyColor,
+    urgencyBadge,
+    hoursLeft,
     label: hours > 0 ? `${hours}h ${minutes}m left` : `${minutes}m left`,
     millisecondsLeft: diff,
   };

@@ -2,7 +2,7 @@
 import os
 from copy import deepcopy
 
-from services.sample_data import SAMPLE_FOODS, build_sample_activities
+from services.sample_data import build_sample_foods, build_sample_activities
 
 _users = {}
 _foods = {}
@@ -63,6 +63,27 @@ class MemoryCollection:
             if match:
                 count += 1
         return count
+        
+    def delete_many(self, query):
+        """Delete all documents matching the query"""
+        keys_to_delete = []
+        for doc_id, doc in self.data.items():
+            match = True
+            for key, value in query.items():
+                if doc.get(key) != value:
+                    match = False
+                    break
+            if match:
+                keys_to_delete.append(doc_id)
+        
+        for k in keys_to_delete:
+            del self.data[k]
+        
+        class DeleteResult:
+            def __init__(self, deleted_count):
+                self.deleted_count = deleted_count
+        
+        return DeleteResult(len(keys_to_delete))
 
 
 def _initialize_sample_data():
@@ -70,12 +91,15 @@ def _initialize_sample_data():
     global _foods, _activities
     
     if not _foods:
-        for index, food in enumerate(deepcopy(SAMPLE_FOODS), start=1):
+        foods = build_sample_foods()
+        for index, food in enumerate(deepcopy(foods), start=1):
             _foods[str(index)] = {"_id": str(index), **food}
         print(f"[INFO] Seeded {len(_foods)} sample food items in memory")
     
     if not _activities:
-        for index, activity in enumerate(deepcopy(build_sample_activities()), start=1):
+        foods = build_sample_foods() if not _foods else list(_foods.values())
+        activities = build_sample_activities(foods)  
+        for index, activity in enumerate(deepcopy(activities), start=1):
             _activities[str(index)] = {"_id": str(index), **activity}
         print(f"[INFO] Seeded {len(_activities)} sample activities in memory")
 

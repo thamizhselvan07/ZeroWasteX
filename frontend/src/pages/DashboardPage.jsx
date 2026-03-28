@@ -1,5 +1,6 @@
 import { Activity, Boxes, ChartNoAxesColumn, PackageCheck, Users } from "lucide-react";
 
+import Leaderboard from "../components/Leaderboard";
 import MapView from "../components/MapView";
 import PageShell from "../components/PageShell";
 import { useAppContext } from "../context/AppContext";
@@ -117,6 +118,11 @@ export default function DashboardPage({ navigate }) {
             </div>
           </div>
         </aside>
+      </section>
+
+      {/* Gamification Leaderboard */}
+      <section className="mt-8">
+        <Leaderboard />
       </section>
     </PageShell>
   );

@@ -58,11 +58,19 @@ function FoodCard({
             </span>
           </div>
 
-          {countdown.urgent ? (
-            <div className="absolute bottom-4 right-4 rounded-full bg-rose-500/90 px-3 py-1 text-xs font-semibold text-white shadow-lg">
-              Urgent
+          {countdown.urgencyBadge ? (
+            <div className={`absolute bottom-4 right-4 rounded-full px-3 py-1 text-xs font-bold text-white shadow-lg ${
+              countdown.urgencyColor === "red"
+                ? "bg-rose-500/90 animate-pulse"
+                : "bg-amber-500/90"
+            }`}>
+              {countdown.urgencyColor === "red" ? "🔴" : "🟡"} {countdown.urgencyBadge}
             </div>
-          ) : null}
+          ) : (
+            <div className="absolute bottom-4 right-4 rounded-full bg-emerald-500/90 px-3 py-1 text-xs font-bold text-white shadow-lg">
+              🟢 SAFE
+            </div>
+          )}
         </div>
       </button>
 
@@ -80,7 +88,13 @@ function FoodCard({
               <Clock3 className="h-4 w-4" />
               Expiry
             </span>
-            <span className={`font-semibold ${countdown.urgent ? "text-rose-600" : "text-slate-900"}`}>
+            <span className={`font-semibold ${
+              countdown.urgencyColor === "red"
+                ? "text-rose-600"
+                : countdown.urgencyColor === "yellow"
+                ? "text-amber-600"
+                : "text-emerald-600"
+            }`}>
               {countdown.label}
             </span>
           </div>

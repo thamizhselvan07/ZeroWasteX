@@ -6,6 +6,7 @@ import {
   MapPinned,
   PackageCheck,
   PackagePlus,
+  Trophy,
   UserRound,
 } from "lucide-react";
 
@@ -14,6 +15,7 @@ const navItems = [
   { path: "/pickup", label: "Pickup", icon: MapPinned },
   { path: "/my-requests", label: "My Requests", icon: PackageCheck },
   { path: "/dashboard", label: "Dashboard", icon: BarChart3 },
+  { path: "/leaderboard", label: "Leaderboard", icon: Trophy },
   { path: "/profile", label: "Profile", icon: UserRound },
 ];
 

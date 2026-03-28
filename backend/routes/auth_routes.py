@@ -20,8 +20,8 @@ def signup():
     if not name or not email or not password:
         return jsonify({"success": False, "message": "Name, email, and password are required."}), 400
 
-    if role not in {"donor", "volunteer"}:
-        return jsonify({"success": False, "message": "Role must be donor or volunteer."}), 400
+    if role not in {"donor", "volunteer", "ngo"}:
+        return jsonify({"success": False, "message": "Role must be donor, volunteer, or ngo."}), 400
 
     try:
         existing_user = get_user_by_email(email)

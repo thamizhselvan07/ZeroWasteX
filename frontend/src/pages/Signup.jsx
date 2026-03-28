@@ -74,7 +74,8 @@ function Signup({ onBack, onSwitch, onSuccess }) {
             <span className="text-sm font-medium text-emerald-50/80">Role</span>
             <select name="role" value={formData.role} onChange={handleChange} className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white outline-none">
               <option value="volunteer" className="text-slate-900">Volunteer</option>
-              <option value="donor" className="text-slate-900">Donor</option>
+              <option value="donor" className="text-slate-900">Donor (Restaurant)</option>
+              <option value="ngo" className="text-slate-900">NGO</option>
             </select>
           </label>
           <label className="grid gap-2">
