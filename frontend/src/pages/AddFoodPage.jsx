@@ -158,17 +158,17 @@ function AddFoodPage({ navigate }) {
             <div className="grid gap-5">
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-slate-700">Food name</span>
-                <input name="name" value={formData.name} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="Fresh rice meal boxes" required />
+                <input name="name" value={formData.name} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="Fresh rice meal boxes" required />
               </label>
 
               <div className="grid gap-5 md:grid-cols-2">
                 <label className="grid gap-2">
                   <span className="text-sm font-semibold text-slate-700">Quantity</span>
-                  <input name="quantity" value={formData.quantity} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="25 meal packs" required />
+                  <input name="quantity" value={formData.quantity} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="25 meal packs" required />
                 </label>
                 <label className="grid gap-2">
                   <span className="text-sm font-semibold text-slate-700">Food type</span>
-                  <select name="type" value={formData.type} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100">
+                  <select name="type" value={formData.type} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100">
                     <option value="veg">Veg</option>
                     <option value="non-veg">Non-Veg</option>
                   </select>
@@ -177,17 +177,17 @@ function AddFoodPage({ navigate }) {
 
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-slate-700">Expiry time</span>
-                <input name="expiry_time" type="datetime-local" value={formData.expiry_time} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" required />
+                <input name="expiry_time" type="datetime-local" value={formData.expiry_time} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" required />
               </label>
 
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-slate-700">Image URL</span>
-                <input name="image_url" type="url" value={formData.image_url} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="Optional visual for pickup teams" />
+                <input name="image_url" type="url" value={formData.image_url} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="Optional visual for pickup teams" />
               </label>
 
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-slate-700">Pickup notes</span>
-                <textarea name="pickup_notes" value={formData.pickup_notes} onChange={handleChange} rows="3" className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="Pickup from side entrance before 6 PM" />
+                <textarea name="pickup_notes" value={formData.pickup_notes} onChange={handleChange} rows="3" className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="Pickup from side entrance before 6 PM" />
               </label>
 
               <button
@@ -205,17 +205,17 @@ function AddFoodPage({ navigate }) {
             <div className="grid gap-5">
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-slate-700">Location label</span>
-                <input name="address" value={formData.address} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="Anna Nagar Community Kitchen" required />
+                <input name="address" value={formData.address} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" placeholder="Anna Nagar Community Kitchen" required />
               </label>
 
               <div className="grid gap-5 md:grid-cols-2">
                 <label className="grid gap-2">
                   <span className="text-sm font-semibold text-slate-700">Latitude</span>
-                  <input name="lat" type="number" step="any" value={formData.lat} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" required />
+                  <input name="lat" type="number" step="any" value={formData.lat} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" required />
                 </label>
                 <label className="grid gap-2">
                   <span className="text-sm font-semibold text-slate-700">Longitude</span>
-                  <input name="lng" type="number" step="any" value={formData.lng} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" required />
+                  <input name="lng" type="number" step="any" value={formData.lng} onChange={handleChange} className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 px-4 py-3 outline-none transition focus:border-teal-300 focus:bg-white focus:ring-4 focus:ring-teal-100" required />
                 </label>
               </div>
 
